@@ -1,0 +1,82 @@
+<div class="m-5">
+    <form #formProduct="ngForm" (ngSubmit)="onSubmitProduct()">
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            [(ngModel)]="product.name" 
+            #name="ngModel"
+                required 
+                minlength="5"
+                >
+            <div *ngIf="name.errors">
+                <div *ngIf="name.errors?.['required'] && (name.dirty || name.touched)">
+                    Name is required
+                </div>
+                <div *ngIf="name.errors?.['minlength'] && (name.dirty || name.touched)" class="text-red-500">
+                    Name 5 minlength
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" 
+            class="form-control" 
+            id="price" 
+            name="price" 
+            [(ngModel)]="product.price" 
+            #price="ngModel"
+                required 
+               
+                >
+            <div *ngIf="price.errors">
+                <div *ngIf="price.errors?.['required'] && (price.dirty || price.touched)">
+                    Price is required
+                </div>
+                
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="img" class="form-label">Img</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="img" 
+            name="img" 
+            [(ngModel)]="product.img" 
+            #img="ngModel"
+                required 
+              
+                >
+            <div *ngIf="img.errors">
+                <div *ngIf="img.errors?.['required'] && (img.dirty || img.touched)">
+                    Img is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="description" 
+            name="description" 
+            [(ngModel)]="product.description" 
+            #description="ngModel"
+                required 
+                minlength="5"
+                >
+            <div *ngIf="description.errors">
+                <div *ngIf="description.errors?.['required'] && (description.dirty || description.touched)">
+                    Description is required
+                </div>
+                
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!formProduct.valid" class="btn btn-primary">Submit</button>
+    </form>
+</div>

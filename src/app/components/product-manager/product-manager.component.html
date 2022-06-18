@@ -1,0 +1,27 @@
+<div >
+    <button class="btn btn-primary my-3" routerLink="add">Add </button>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Img</th>
+            <th scope="col">Desc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products let i=index">
+            <th scope="row">{{i +1}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.img}}</td>
+            <td>{{product.description}}</td>
+            <td>
+                <button class="btn btn-warning me-2" routerLink="{{product.id}}/edit">Edit</button>
+                <button class="btn btn-danger " (click)="onRemove(product.id!)">Remove</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

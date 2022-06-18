@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Product B",
+      "price": 200,
+      "img": "images/product",
+      "description": "Description Product B"
+    },
+    {
+      "name": "Product DD updated",
+      "price": 1000,
+      "img": "images/product",
+      "description": "Amet minim mollit non deserunt ullamco est sit aliqua ",
+      "id": 3
+    },
+    {
+      "name": "Product C update",
+      "price": 300,
+      "img": "images/product",
+      "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. ",
+      "id": 4
+    }
+  ]
+}
